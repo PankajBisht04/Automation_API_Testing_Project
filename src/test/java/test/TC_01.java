@@ -8,13 +8,14 @@ import static org.hamcrest.Matchers.*;
 
 public class TC_01{
 	@Test
-	public void get() {
+	public void get() {//First Test Case in Reqreshow to check if api returns only single record
 		baseURI="https://reqres.in/api";
 		given().
 			header("x-api-key","reqres-free-v1").
 			get("/users?page=2").
 		then().
 			statusCode(200).//check for status code
+			body("data.size()",greaterThan(0)).
 			body("data[4].first_name",equalTo("George")).//check if first name is George
 			body("page",equalTo(2)).
 			body("per_page",equalTo(6)).

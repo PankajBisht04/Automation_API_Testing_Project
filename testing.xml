@@ -8,6 +8,11 @@
 			<class name="test.TC_03" />
 			<class name="test.TC_04" />
 			<class name="test.TC_05" />
+			<class name="test.TC_06" />
+			<class name="test.TC_07" />
+			<class name="test.TC_08" />
+			<class name="test.TC_09" />
+			<class name="test.TC_10" />
 		</classes>
 	</test>
 </suite>

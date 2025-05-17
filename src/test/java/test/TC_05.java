@@ -4,22 +4,18 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-import org.json.simple.JSONObject;
-
 //LoginPageSuccessTest
 
 public class TC_05{
 	@Test
-	public void put() {
-		
-
+	public void get() {//First Test Case in Reqreshow to check if api returns only single record
 		baseURI="https://reqres.in/api";
-		
 		given().
 			header("x-api-key","reqres-free-v1").
-		when().
-			delete("/users/2").
+			get("/unknown/2").
 		then().
-			statusCode(204);
+			statusCode(200).//check for status code
+			body("data.size()",equalTo(5));
+									
 	}
 }
